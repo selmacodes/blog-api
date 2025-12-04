@@ -45,10 +45,12 @@ CREATE DATABASE blogdb;
 ```
 
 ### 5. Start servern
+Kör kommandot i terminalen från projektets rotmapp:
+
 ```bash
-npm start
+node src/app.mjs
 ```
-Servern körs på porten som anges i .env (t.ex. http://localhost:3000)
+Servern körs på porten som anges i `.env` (t.ex. http://localhost:3000)
 
 ---
 
