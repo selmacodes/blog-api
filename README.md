@@ -1,7 +1,6 @@
 # Node.js Blog API
 
-Ett RESTful Blog API byggt med **Node.js**, **Express** och **PostgreSQL**, med användarautentisering,
-ägarskapskontroller och CRUD-operationer för inlägg, kommentarer och likes/dislikes.
+Ett RESTful Blog API byggt med **Node.js**, **Express** och **PostgreSQL**, med användarautentisering, ägarskapskontroller och CRUD-operationer för inlägg, kommentarer och likes/dislikes.
 
 ---
 
