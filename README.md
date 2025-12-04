@@ -44,7 +44,7 @@ APP_PORT=3000
 CREATE DATABASE blogdb;
 ```
 
-### 5. Start servern
+### 5. Starta servern
 Kör kommandot i terminalen från projektets rotmapp:
 
 ```bash
