@@ -19,6 +19,7 @@ export async function setupDatabase() {
             title VARCHAR(255) NOT NULL,
             content TEXT NOT NULL,
             likes INT DEFAULT 0,
+            dislikes INT DEFAULT 0,
             created_at TIMESTAMP DEFAULT NOW(),
             updated_at TIMESTAMP DEFAULT NOW(),
             user_id INT NOT NULL REFERENCES users(id) 
@@ -32,6 +33,7 @@ export async function setupDatabase() {
         id SERIAL PRIMARY KEY,
         content TEXT NOT NULL,
         likes INT DEFAULT 0,
+        dislikes INT DEFAULT 0,
         created_at TIMESTAMP DEFAULT NOW(),
         post_id INT NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
         user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
