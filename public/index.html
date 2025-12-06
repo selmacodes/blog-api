@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogg - Inlägg</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <h1>Alla blogginlägg</h1>
+<body>
+    <header>
+        <h1>Bloggen</h1>
+
+        <div id="loginBox">
+            <input type="text" id="loginUsername" placeholder="Användarnamn">
+            <input type="password" id="loginPassword" placeholder="Lösenord">
+            <button id="loginBtn">Logga in</button>
+        </div>
+
+        <div id="loggedInBox" style="display:none;">
+            <span id="loggedInUser"></span>
+            <button id="logoutBtn">Logga ut</button>
+        </div>
+    </header>
 
     <div id="posts"></div>
 
     <script src="index.js"></script>
-    
+
 </body>
+
 </html>

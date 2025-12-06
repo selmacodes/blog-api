@@ -1,5 +1,5 @@
 import express from "express";
-import { registerUser } from "../repositories/users.mjs";
+import { registerUser, loginUser } from "../repositories/users.mjs";
 import { requireString } from "../middlewares/validation.mjs";
 
 const router = express.Router();
@@ -20,6 +20,27 @@ router.post("/users", requireString(["username", "password"]), async (req, res) 
         if (error.message === "Username already exists") {
             return res.status(409).json({ error: error.message });
         }
+        console.error(error);
+        return res.status(500).json({ error: "An unexpected error occurred." });
+    }
+});
+
+// Logga in användare
+router.post("/users/login", requireString(["username", "password"]), async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        const user = await loginUser(username, password);
+
+        if (!user) {
+            return res.status(401).json({ error: "Invalid username or password" });
+        }
+        
+        return res.json({
+            message: "Login successful",
+            user: { id: user.id, username: user.username }
+        });
+    } catch (error) {
         console.error(error);
         return res.status(500).json({ error: "An unexpected error occurred." });
     }
