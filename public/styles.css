@@ -9,23 +9,62 @@ body {
     background-color: #FEFEFE;
 }
 
-h1 {
-    text-align: center;
-    margin: 50px 0;
-}
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: #F0F9FF;
+    background: #F1F5F9;
     border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+    font-family: "DM Serif Text", serif;
+    font-size: 45px;
+    margin: 30px 40px;
 }
 
 #loginBox, #loggedInBox {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+}
+
+#loginBox input {
+    padding: 6px 10px;
+    border: 1px solid #656667;
+    font-size: 0.9rem;
+    border-radius: 5px;
+}
+
+#loginBox input:focus {
+    outline: none;
+    border-color: #304C70;
+    box-shadow: 0 0 4px #304C70;
+}
+
+#loginBtn, #logoutBtn {
+    cursor: pointer;
+    padding: 7px 14px;
+    border-radius: 5px;
+    border: none;
+    font-size: 0.9rem;
+    background: #304C70;
+    color: white;
+}
+
+#loginBtn:hover, #logoutBtn:hover {
+    background: #293F5B;
+}
+
+#logoutBtn {
+    margin-right: 10px;
+}
+
+.user-badge {
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 #posts {
@@ -33,11 +72,11 @@ header {
     margin: 60px auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .post {
-    background-color: #F0F9FF;
+    background-color: #F1F5F9;
     padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px #556A86;
