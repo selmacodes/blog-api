@@ -9,7 +9,7 @@ export async function setupDatabase() {
             username VARCHAR(50) UNIQUE NOT NULL,
             password_hash VARCHAR(255) NOT NULL,
             created_at TIMESTAMP DEFAULT NOW()
-            );
+        );
     `);
 
     // Posts table (kopplat till users)
@@ -25,21 +25,20 @@ export async function setupDatabase() {
             user_id INT NOT NULL REFERENCES users(id) 
                 ON DELETE CASCADE
         );
-    `)
+    `);
 
     // Comments-tabell
     await pool.query(`
         CREATE TABLE IF NOT EXISTS comments (
-        id SERIAL PRIMARY KEY,
-        content TEXT NOT NULL,
-        likes INT DEFAULT 0,
-        dislikes INT DEFAULT 0,
-        created_at TIMESTAMP DEFAULT NOW(),
-        post_id INT NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
-        user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+            id SERIAL PRIMARY KEY,
+            content TEXT NOT NULL,
+            likes INT DEFAULT 0,
+            dislikes INT DEFAULT 0,
+            created_at TIMESTAMP DEFAULT NOW(),
+            post_id INT NOT NULL REFERENCES posts(id) ON DELETE CASCADE,
+            user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
         );
-    `)
-
+    `);
 
     console.log("Database ready.");
 }
