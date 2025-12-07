@@ -14,7 +14,22 @@
 <body>
     <header>
         <h1>Bloggen</h1>
+
+        <div id="loginBox">
+            <input type="text" id="loginUsername" placeholder="Användarnamn">
+            <input type="password" id="loginPassword" placeholder="Lösenord">
+            <button id="loginBtn">Logga in</button>
+        </div>
+
+        <div id="loggedInBox" style="display:none;">
+            <div class="user-badge">
+                <span id="loggedInUser"></span>
+            </div>
+            <button id="logoutBtn">Logga ut</button>
+        </div>
     </header>
+
+    <div id="posts"></div>
 
     <script src="index.js"></script>
 
