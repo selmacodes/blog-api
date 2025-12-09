@@ -1,64 +1,35 @@
+// Hämta alla blogginlägg från backend och rendera dem på sidan
 async function loadPosts() {
-    const res = await fetch("http://localhost:3030/api/posts");
-    const posts = await res.json();
+    try {
+        // Skicka GET-request till API:t
+        const res = await fetch("http://localhost:3030/api/posts");
+        const posts = await res.json();
 
-    const container = document.getElementById("posts");
-    container.innerHTML = "";
+        // Hämta container-diven där inläggen ska visas
+        const container = document.getElementById("posts");
+        container.innerHTML = ""; // Rensa tidigare innehåll
 
-    posts.forEach(post => {
-        const div = document.createElement("div");
-        div.className = "post";
-        div.innerHTML = `
-            <h2>${post.title}</h2>
-            <p>${post.content}</p>
-            <small>Likes: ${post.likes} Dislikes: ${post.dislikes}</small>
-        `;
-        container.appendChild(div);
-    });
+        // Loopa igenom alla inlägg och skapa HTML för varje
+        posts.forEach(post => {
+            const div = document.createElement("div");
+            div.className = "post"; // Klass för styling
+
+            // Lägg till titel, innehåll och likes/dislikes
+            div.innerHTML = `
+                <h2>${post.title}</h2>
+                <p>${post.content}</p>
+                <small>Likes: ${post.likes} Dislikes: ${post.dislikes}</small>
+            `;
+
+            // Lägg till div:en i container
+            container.appendChild(div);
+        });
+    } catch (err) {
+        console.error("Failed to load posts:", err);
+        alert("Kunde inte hämta blogginlägg. Försök igen senare.");
+    }
 }
+
+// Kör funktionen direkt när sidan laddas
 loadPosts();
 
-document.getElementById("loginBtn").addEventListener("click", async () => {
-    const username = document.getElementById("loginUsername").value;
-    const password = document.getElementById("loginPassword").value;
-
-    const res = await fetch("http://localhost:3030/api/users/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("username", username);
-        showLoggedIn();
-    } else {
-        alert("Fel användarnamn eller lösenord");
-    }
-});
-
-function showLoggedIn() {
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("loggedInBox").style.display = "flex";
-    document.getElementById("loggedInUser").textContent =
-        "Inloggad som: " + localStorage.getItem("username");
-}
-
-function showLoggedOut() {
-    document.getElementById("loginBox").style.display = "flex";
-    document.getElementById("loggedInBox").style.display = "none";
-}
-
-document.getElementById("logoutBtn").addEventListener("click", () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    showLoggedOut();
-});
-
-if (localStorage.getItem("token")) {
-    showLoggedIn();
-} else {
-    showLoggedOut();
-}

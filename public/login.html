@@ -27,21 +27,19 @@
     </header>
 
     <main>
-        <section class="hero">
-            <article class="hero-text">
-                <h2>Din plats för <br> idéer och berättelser</h2>
-                <p>Skriv egna inlägg, läs andras tankar och bli en del av vårt community. Upptäck nya perspektiv, dela dina idéer och engagera dig i meningsfulla diskussioner - allt på ett ställe.</p>
+        <section class="login-container">
+            <h3>Logga in på ditt konto</h3>
+            <form id="loginForm">
+                <label for="username">Användarnamn</label>
+                <input type="text" name="username" id="username" placeholder="Användarnamn">
 
-                <div class="hero-buttons">
-                    <a href="login.html" class="btn primary">Logga in</a>
-                    <a href="register.html" class="btn secondary">Skapa konto</a>
-                </div>
+                <label for="password">Lösenord</label>
+                <input type="password" id="password" name="password" placeholder="Lösenord">
 
-            </article>
+                <button type="submit">Logga in</button>
+            </form>
 
-            <figure class="hero-image">
-                <img src="assets/hero.png" alt="Symboler runt ett dokument">
-            </figure>
+            <p>Har du inget konto? <a href="register.html">Skapa ett här</a></p>
         </section>
     </main>
 
@@ -49,6 +47,6 @@
         <p>&copy; 2026 Bloggen</p>
     </footer>
 
+<script src="login.js"></script>    
 </body>
-
 </html>
