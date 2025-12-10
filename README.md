@@ -1,16 +1,25 @@
-# Node.js Blog API
+# Node.js Blog API med frontend
 
-Ett RESTful Blog API byggt med **Node.js**, **Express** och **PostgreSQL**, med användarautentisering, ägarskapskontroller och CRUD-operationer för inlägg, kommentarer och likes/dislikes.
+Ett fullstack Blog API byggt med **Node.js**, **Express**, **PostgreSQL** och en enkel frontend med **HTML/CSS/JS**.
+Projektet inkluderar användarautentisering, registrering, CRUD-operationer för inlägg, kommentarer, likes/dislikes och en startsida med hero-sektion.
 
 ---
 
-## Funktioner
+## Backend-funktioner
 - Registrering och inloggning av användare
 - Skapa, läsa, uppdatera och ta bort blogginlägg
 - Gilla och ogilla inlägg
 - Kommentera på inlägg
 - Input-validering för strängar och nummer
 - Ägarskapskontroller (användare kan endast ändra sina egna inlägg)
+
+## Frontend-funktioner
+- Startsida med hero-sektion och call-to-action
+- Registrera nytt konto
+- Logga in och logga ut
+- Visa alla blogginlägg dynamiskt
+- Dynamisk rendering av inlägg via fetch
+- Grundläggande styling med flexbox
 
 ---
 
@@ -43,13 +52,16 @@ APP_PORT=3000
 CREATE DATABASE blogdb;
 ```
 
-### 5. Starta servern
-Kör kommandot i terminalen från projektets rotmapp:
+### 5. Starta servern och öppna frontend
+1. Kör servern från projektets rotmapp:
 
 ```bash
 node src/app.mjs
 ```
 Servern körs på porten som anges i `.env` (t.ex. http://localhost:3000)
+
+2. Öppna `index.html` i webbläsaren (t.ex. via Live Server i VS Code) för att se startsidan och layouten.
+ **OBS:** För full funktionalitet (registrera/logga in och hämta blogginlägg) måste servern köras. Se också till att porten i `.env` matchar URL:en i frontendens `fetch`-anrop (t.ex. `http://localhost:3000/api/...`).
 
 ---
 
@@ -58,6 +70,12 @@ Servern körs på porten som anges i `.env` (t.ex. http://localhost:3000)
 - `middlewares/`  - validering, autentisering, ägarskap
 - `repositories/` - databaslogik
 - `config/`       - databasanslutning och setup
+- `index.html`    - startsidan (hero + CTA)
+- `posts.html`    - sida som visar alla blogginlägg
+- `login.html`    - inloggningssida
+- `register.html` - registreringssida
+- `styles.css`    - global styling
+- `index.js`, `login.js`, `register.js` - frontend JS
 
 ---
 
@@ -86,6 +104,9 @@ Servern körs på porten som anges i `.env` (t.ex. http://localhost:3000)
 - Node.js
 - Express
 - PostgreSQL
+- HTML, CSS, JavaScript
+- Dynamisk rendering via fetch
+- Flexbox för layout
 - Middleware för validering, autentisering och ägarskap
 - RESTful API-design
 
@@ -99,3 +120,7 @@ Servern körs på porten som anges i `.env` (t.ex. http://localhost:3000)
 - Skapa Postgres-tabeller med relationer och `ON DELETE CASCADE`.
 - Validera `req.body`, `req.query` och `req.params` för robust API.
 - Reflektera över kodförbättringar och minska repetition.
+- Bygga frontend som kommunicerar med REST API via fetch
+- Skapa dynamiska sidor som uppdateras när data ändras
+- Implementera grundläggande användarautentisering på klienten
+- Organisera frontend-filer och separera logik för olika sidor
