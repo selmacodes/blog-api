@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloggen</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="public/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -27,15 +27,26 @@
     </header>
 
     <main>
-        <div id="posts"></div>
-        <script src="index.js"></script>
+        <section class="reg-container">
+            <h3>Skapa konto</h3>
+            <form id="registerForm">
+                <label for="regUsername">Användarnamn</label>
+                <input type="text" id="regUsername" required>
+
+                <label for="regPassword">Lösenord</label>
+                <input type="password" id="regPassword" required>
+
+                <button type="submit">Registrera</button>
+            </form>
+
+            <p>Har du redan ett konto? <a href="login.html">Logga in här</a></p>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Bloggen</p>
     </footer>
 
-
+<script src="public/register.js"></script>    
 </body>
-
 </html>
