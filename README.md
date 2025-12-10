@@ -5,6 +5,13 @@ Projektet inkluderar användarautentisering, registrering, CRUD-operationer för
 
 ---
 
+## Öppna sidan
+Klicka på länken nedan för att öppna sidan (högerklicka för ny flik).
+
+[Öppna sidan](https://selmacodes.github.io/blog-api/)
+
+---
+
 ## Backend-funktioner
 - Registrering och inloggning av användare
 - Skapa, läsa, uppdatera och ta bort blogginlägg
