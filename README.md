@@ -7,8 +7,7 @@ Projektet inkluderar användarautentisering, registrering, CRUD-operationer för
 
 ---
 
-## Öppna sidan
-Klicka på länken nedan för att öppna sidan (högerklicka för ny flik).
+## Live demo
 
 [Öppna sidan](https://selmacodes.github.io/blog-api/)
 
