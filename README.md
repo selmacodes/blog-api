@@ -21,6 +21,8 @@ Projektet inkluderar användarautentisering, registrering, CRUD-operationer för
 - Input-validering för strängar och nummer
 - Ägarskapskontroller (användare kan endast ändra sina egna inlägg)
 
+---
+
 ## Frontend-funktioner
 - Startsida med hero-sektion och call-to-action
 - Registrera nytt konto
