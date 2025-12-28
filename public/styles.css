@@ -24,6 +24,10 @@ body {
 
 main {
     flex: 1;
+}
+
+main.homepage {
+    flex: 1;
     display: flex;
 }
 
@@ -218,7 +222,7 @@ nav a:hover::after {
 
 h3 {
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
@@ -260,7 +264,7 @@ h3 {
 .login-container label,
 .reg-container label {
     margin-bottom: 4px;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .login-container button,
@@ -282,6 +286,17 @@ h3 {
 .reg-container button:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
+}
+
+.inline-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
+    color: var(--primary-dark);
 }
 
 /* FOOTER */

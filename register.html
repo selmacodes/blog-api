@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="public/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
@@ -16,14 +16,16 @@
 
 <body>
     <header>
-        <h1><a href="index.html">Bloggen</a></h1>
-        <nav>
-            <ul>
-                <li><a href="login.html">Logga in</a></li>
-                <li><a href="register.html">Skapa konto</a></li>
-                <li><a href="posts.html">Alla blogginlägg</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <h1><a href="index.html">Bloggen</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="login.html">Logga in</a></li>
+                    <li><a href="register.html">Skapa konto</a></li>
+                    <li><a href="posts.html">Alla blogginlägg</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -39,7 +41,7 @@
                 <button type="submit">Registrera</button>
             </form>
 
-            <p>Har du redan ett konto? <a href="login.html">Logga in här</a></p>
+            <p>Har du redan ett konto? <a href="login.html" class="inline-link">Logga in här</a></p>
         </section>
     </main>
 
@@ -47,6 +49,7 @@
         <p>&copy; 2026 Bloggen</p>
     </footer>
 
-<script src="public/register.js"></script>    
+    <script src="public/register.js"></script>
 </body>
+
 </html>
