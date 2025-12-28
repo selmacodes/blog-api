@@ -2,10 +2,10 @@
 
 :root {
     --background: #F7F7F7;
-    --background-header: #113A74; 
+    --background-header: #113A74;
     --primary: #1652A7;
     --primary-dark: #103C75;
-    --secondary-dark: #E1E6EF;
+    --secondary-dark: #f3f8ff;
 }
 
 * {
@@ -14,36 +14,47 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-main {
-    flex: 1;
-}
-
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--background);
     font-family: "Raleway", sans-serif;
 }
 
+main {
+    flex: 1;
+    display: flex;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
 /* HEADER */
 
 header {
+    width: 100%;
+    background: var(--background-header);
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: var(--background-header);
+    padding: 3rem 0;
 }
 
 h1 {
     font-family: "Dancing Script", cursive;
     font-size: 2.5rem;
-    margin: 30px 50px;
     color: var(--background);
 }
 
@@ -62,16 +73,30 @@ header {
 header nav ul {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 3rem;
 }
 
-header nav ul li a {
+nav a {
+    font-weight: 450;
+    font-size: 18px;
     text-decoration: none;
     color: var(--background);
+    transition: 0.3s ease-in-out;
 }
 
-nav {
-    margin-right: 50px;
+nav a::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 3px;
+    margin: 0 auto;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 35px;
 }
 
 /* POST */
@@ -113,15 +138,16 @@ nav {
 
 .hero {
     display: flex;
+    flex: 1;
     align-items: center;
-    justify-content: center;
-    padding: 60px;
-    gap: 100px;
-    min-height: 70vh;
+    gap: 2rem;
+}
+
+.hero>* {
+    flex: 1 1 25em;
 }
 
 .hero-text {
-    max-width: 710px;
     font-family: "Raleway", sans-serif;
 }
 
@@ -129,8 +155,7 @@ nav {
     font-size: 4.4rem;
     line-height: 1.06;
     margin-bottom: 35px;
-    letter-spacing: -0.8px;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 .hero-text p {
@@ -138,6 +163,17 @@ nav {
     margin-bottom: 45px;
     line-height: 1.5;
     color: #545454;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-height: 70vh;
+    width: auto;
 }
 
 .hero-buttons {
@@ -149,8 +185,8 @@ nav {
 .btn {
     padding: 20px 40px;
     font-size: 1.25rem;
+    font-weight: 580;
     border-radius: 40px;
-    font-weight: 600;
     border: none;
     text-decoration: none;
     cursor: pointer;
@@ -161,7 +197,8 @@ nav {
     background: var(--primary);
     color: var(--background);
 }
-.btn.primary:hover { 
+
+.btn.primary:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
 }
@@ -169,25 +206,24 @@ nav {
 .btn.secondary {
     background: var(--background);
     color: var(--primary);
-    border: 1.9px solid var(--primary);
+    border: 2px solid var(--primary);
 }
+
 .btn.secondary:hover {
     background: var(--secondary-dark);
     transform: translateY(-2px);
-}
-
-.hero-image img {
-    width: 38rem;
 }
 
 /* LOG IN & REGISTER */
 
 h3 {
     font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
-.login-container, .reg-container {
+.login-container,
+.reg-container {
     font-family: "Raleway", sans-serif;
     max-width: 500px;
     margin: 0 auto;
@@ -215,30 +251,35 @@ h3 {
     border-color: #007BFF;
 }
 
-#loginForm, #registerForm {
+#loginForm,
+#registerForm {
     display: flex;
     flex-direction: column;
 }
 
-.login-container label, .reg-container label {
+.login-container label,
+.reg-container label {
     margin-bottom: 4px;
     font-weight: bold;
 }
 
-.login-container button, .reg-container button {
+.login-container button,
+.reg-container button {
     padding: 12px;
     font-size: 1.1rem;
+    font-weight: 500;
     background: var(--primary);
     color: var(--background);
     border: none;
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
     transition: background-color 0.2s;
     margin-bottom: 5px;
-    margin-top: 23px;
+    margin-top: 15px;
 }
 
-.login-container button:hover, .reg-container button:hover {
+.login-container button:hover,
+.reg-container button:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
 }
@@ -247,7 +288,7 @@ h3 {
 
 footer {
     text-align: center;
-    padding: 3rem;
+    padding-bottom: 3rem;
     font-size: 0.9rem;
     color: #545454;
 }
