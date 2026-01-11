@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloggen</title>
     <link rel="stylesheet" href="public/styles.css">
+    <script src="public/hamburger.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -19,12 +20,14 @@
         <div class="container header-container">
             <h1><a href="index.html">Bloggen</a></h1>
             <nav>
-                <ul>
+                <ul class="header__nav-list">
                     <li><a href="login.html">Logga in</a></li>
                     <li><a href="register.html">Skapa konto</a></li>
                     <li><a href="posts.html">Alla blogginlägg</a></li>
                 </ul>
             </nav>
+
+            <div class="header__hamburger" aria-label="Meny" aria-expanded="false" role="button"></div>
         </div>
     </header>
 
