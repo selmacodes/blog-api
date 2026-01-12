@@ -3,7 +3,7 @@
 Ett fullstack Blog API byggt med **Node.js**, **Express**, **PostgreSQL** och en enkel frontend med **HTML/CSS/JS**.
 Projektet inkluderar användarautentisering, registrering, CRUD-operationer för inlägg, kommentarer, likes/dislikes och en startsida med hero-sektion.
 
-![Desktop Preview](public/assets/preview.png)
+![Desktop Preview](public/assets/bloggen-preview.png)
 
 ---
 
